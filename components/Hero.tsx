@@ -108,7 +108,34 @@ export default function Hero() {
                         <img src="https://cdn-icons-png.flaticon.com/512/2740/2740652.png" alt="Chair" className="w-12 h-12 opacity-80" />
                     </div>
                 </motion.div>
+
             </div>
-        </section>
+
+            {/* Floating Decorative Elements */}
+            {
+                [
+                    { src: "/images/hero-floating-1.png", className: "top-20 left-[5%] md:left-[10%] w-16 md:w-20", delay: 0 },
+                    { src: "/images/hero-floating-2.png", className: "bottom-20 left-[10%] md:left-[45%] w-14 md:w-18", delay: 1.5 },
+                    { src: "/images/hero-floating-3.png", className: "top-32 right-[5%] w-12 md:w-16", delay: 0.8 },
+                ].map((item, index) => (
+                    <motion.img
+                        key={index}
+                        src={item.src}
+                        alt=""
+                        className={`absolute opacity-80 pointer-events-none drop-shadow-lg ${item.className}`}
+                        animate={{
+                            y: [-10, 10, -10],
+                            rotate: [0, 5, -5, 0],
+                        }}
+                        transition={{
+                            duration: 5 + index,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            delay: item.delay,
+                        }}
+                    />
+                ))
+            }
+        </section >
     );
 }

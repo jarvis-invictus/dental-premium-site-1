@@ -37,7 +37,7 @@ export const siteConfig = {
         offer: {
             text: "New Patient Offer",
             value: "20% OFF",
-            visible: true
+            visible: false
         }
     },
     features: {
@@ -65,11 +65,11 @@ export const siteConfig = {
     },
     doctor: {
         label: "Meet The Expert",
-        name: "Dr. ALEX SMITH",
+        name: "Dr. Ananya Sharma",
         qualification: "Chief Dental Surgeon (BDS, MDS)",
-        description1: "Dr. Alex Smith is a dedicated dental professional with over 15 years of experience. He specializes in cosmetic and restorative dentistry, helping thousands of patients achieve their dream smiles.",
-        description2: "Committed to continuous learning, Dr. Smith stays updated with the latest advancements in dental science to provide the highest standard of care.",
-        image: "/images/doctor-profile.png",
+        description1: "Dr. Ananya Sharma is a dedicated dental professional with over 15 years of experience. She specializes in cosmetic and restorative dentistry, helping thousands of patients achieve their dream smiles.",
+        description2: "Committed to continuous learning, Dr. Sharma stays updated with the latest advancements in dental science to provide the highest standard of care.",
+        image: "/images/doctor-ananya.png",
         stats: {
             label: "Experience",
             value: "15+ Years"
