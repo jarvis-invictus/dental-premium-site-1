@@ -47,7 +47,7 @@ export default function Footer() {
                         <h4 className="text-lg font-bold text-white mb-6">Quick Links</h4>
                         <ul className="space-y-3">
                             <li><a href="#home" className="hover:text-white transition-colors">Home</a></li>
-                            <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
+                            <li><a href="#about" className="hover:text-white transition-colors">About</a></li>
                             <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
                             <li><a href={siteConfig.social.whatsapp} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Contact</a></li>
                         </ul>

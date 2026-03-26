@@ -36,7 +36,7 @@ export default function FAQ() {
                 <div className="text-center mb-12">
                     <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Common Questions</span>
                     <h2 className="text-4xl font-bold text-secondary mb-4 font-serif">
-                        Frequently Asked <span className="text-primary">Questions</span>
+                        Common Questions <span className="text-primary">Answered</span>
                     </h2>
                 </div>
 

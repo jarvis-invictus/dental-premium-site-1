@@ -21,12 +21,12 @@ export default function Header() {
     const navLinks = [
         { name: "Home", href: "#home" },
         { name: "Services", href: "#services" },
-        { name: "About Us", href: "#about" },
+        { name: "About", href: "#about" },
         { name: "Contact", href: siteConfig.social.whatsapp },
     ];
 
     return (
-        <header className={`w-full z-50 transition-all duration-300 ${isScrolled ? "fixed top-0 bg-white/95 backdrop-blur-sm shadow-md" : "relative bg-white"}`}>
+        <header className={`w-full z-50 transition-all duration-300 sticky top-0 ${isScrolled ? "bg-white/95 backdrop-blur-sm shadow-md" : "bg-white"}`}>
             {/* Top Bar */}
             <div
                 className="text-white py-2 text-sm hidden md:block"

@@ -55,10 +55,10 @@ export default function AppointmentForm() {
                     <div className="max-w-xl mx-auto w-full">
                         <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block text-center">Appointment</span>
                         <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-2 font-serif text-center">
-                            Book your <span className="text-primary">Dentist</span>
+                            Schedule a <span className="text-primary">Visit</span>
                         </h2>
                         <h3 className="text-4xl md:text-5xl font-bold text-secondary mb-10 font-serif text-center">
-                            for <span className="text-primary">Proper</span> Care
+                            at <span className="text-primary">City Dental</span>
                         </h3>
 
                         {isSubmitted ? (
@@ -68,7 +68,7 @@ export default function AppointmentForm() {
                                 className="bg-primary/10 p-8 rounded-2xl text-center border border-primary/20"
                             >
                                 <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <span className="text-3xl">🎉</span>
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{display:"inline-block"}}><path d="M20 6 9 17l-5-5"/></svg>
                                 </div>
                                 <h3 className="text-2xl font-bold text-primary mb-2">Request Received!</h3>
                                 <p className="text-gray-600 mb-6">

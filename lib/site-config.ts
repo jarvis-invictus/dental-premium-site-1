@@ -31,8 +31,8 @@ export const siteConfig = {
     },
     hero: {
         tagline: "Baner, Pune",
-        headingLine1: "Experience the",
-        headingLine2: "Perfect Smile",
+        headingLine1: "Dental Care in",
+        headingLine2: "Baner, Done Right",
         description: "Comprehensive dental care for your entire family. From routine checkups and cleanings to cosmetic procedures and implants — all under one roof in Baner.",
         offer: {
             text: "New Patient Offer",
@@ -42,8 +42,8 @@ export const siteConfig = {
     },
     features: {
         title: "Why Patients Choose Us",
-        headingLine1: "Excellence in",
-        headingLine2: "Dental Care",
+        headingLine1: "Modern Equipment,",
+        headingLine2: "Gentle Hands",
         description: "Equipped with digital X-rays, intraoral cameras, and laser-assisted tools. Your comfort and safety are our top priority.",
         items: [
             {
@@ -77,9 +77,9 @@ export const siteConfig = {
     },
     testimonials: {
         label: "Patient Feedback",
-        headingLine1: "What Our",
-        headingLine2: "Patients Say",
-        description: "Real feedback from patients who visited our Baner clinic. Names shortened for privacy.",
+        headingLine1: "Honest Feedback",
+        headingLine2: "From Baner",
+        description: "What patients told us after their visits. Names shortened for privacy.",
         items: [
             {
                 name: "Rajesh M.",

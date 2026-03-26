@@ -54,7 +54,7 @@ export default function Services() {
         <section id="services" className="py-20 bg-gray-50">
             <div className="container mx-auto px-4">
                 <div className="text-center max-w-2xl mx-auto mb-16">
-                    <h3 className="text-primary font-semibold uppercase tracking-wider mb-2">Our Services</h3>
+                    <h3 className="text-primary font-semibold uppercase tracking-wider mb-2">Treatments</h3>
                     <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4 font-serif">
                         <SplitText>Complete</SplitText> <span className="text-accent"><SplitText delay={0.3}>Dental Solutions</SplitText></span>
                     </h2>
