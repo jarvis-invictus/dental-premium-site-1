@@ -26,8 +26,8 @@ export default function Footer() {
                             </div>
                         </div>
                         <p className="mb-6 text-gray-400">
-                            Providing premium dental care with advanced technology and a patient-first approach.
-                            Your smile is our priority.
+                            Dental care for families in Baner, Pune. Digital X-rays, implants, cosmetic dentistry, and
+                            painless root canals. Walk-ins welcome.
                         </p>
                         <div className="flex gap-4">
                             <a href={siteConfig.social.facebook} aria-label="Facebook" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:opacity-80 cursor-pointer transition-colors text-white" style={{ backgroundColor: undefined }}>

@@ -22,8 +22,39 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    name: siteConfig.name,
+    description: siteConfig.hero.description,
+    telephone: siteConfig.phone,
+    email: siteConfig.email,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: `${siteConfig.address.line1} ${siteConfig.address.line2}`,
+      addressLocality: "Pune",
+      addressRegion: "Maharashtra",
+      postalCode: "411045",
+      addressCountry: "IN",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 18.6514,
+      longitude: 73.7431,
+    },
+    openingHours: "Mo-Sa 09:00-20:00",
+    priceRange: "₹₹",
+    url: "https://dental-standard.vercel.app",
+  };
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${outfit.variable} antialiased`}
         style={

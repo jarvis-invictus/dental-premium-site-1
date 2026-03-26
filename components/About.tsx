@@ -43,7 +43,9 @@ export default function About() {
                                 transition={{ delay: 0.5, duration: 0.5 }}
                                 className="absolute -bottom-6 -left-6 z-30 bg-white p-4 rounded-xl shadow-lg border border-gray-100 flex items-center gap-3"
                             >
-                                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-2xl">🦷</div>
+                                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><path d="M12 5.5c-1.7-2-4.5-2-6 0s-1.5 5.5 0 10c.5 1.5 1 3 2 4 1.5 1.5 3 1 3.5-1 .3-1.5.5-2.5.5-2.5s.2 1 .5 2.5c.5 2 2 2.5 3.5 1 1-1 1.5-2.5 2-4 1.5-4.5 1.5-8 0-10s-4.3-2-6 0z"/></svg>
+                                </div>
                                 <div>
                                     <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">{siteConfig.doctor.stats.label}</p>
                                     <p className="text-accent font-bold text-lg">{siteConfig.doctor.stats.value}</p>
