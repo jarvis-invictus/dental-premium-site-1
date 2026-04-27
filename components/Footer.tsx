@@ -122,7 +122,7 @@ export default function Footer() {
                 </div>
 
                 <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-                    <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All Rights Reserved. | Powered by <a href="https://invictus-ai.in" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">Invictus AI</a></p>
                 </div>
             </div>
         </footer>

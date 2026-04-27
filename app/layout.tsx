@@ -3,6 +3,7 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import MobileStickyBar from "@/components/MobileStickyBar";
+import ChatbotWidget from "@/components/ChatbotWidget";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 import { siteConfig } from "@/lib/site-config";
@@ -113,6 +114,7 @@ export default function RootLayout({
           {children}
           <FloatingWhatsApp />
           <MobileStickyBar />
+          <ChatbotWidget />
         </SmoothScroll>
       </body>
     </html>
