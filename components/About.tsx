@@ -17,13 +17,13 @@ export default function About() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
-                            className="relative min-w-[350px] min-h-[400px]"
+                            className="relative w-[280px] h-[320px] lg:w-[340px] lg:h-[400px] mx-auto"
                         >
                             {/* Decorative Background Frame (Rotated) */}
                             <motion.div
                                 animate={{ rotate: [6, 12, 6] }}
                                 transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                                className="absolute inset-0 bg-accent/20 rounded-tr-[100px] rounded-bl-[100px] rounded-tl-[30px] rounded-br-[30px] z-0"
+                                className="absolute inset-0 bg-primary/10 rounded-tr-[100px] rounded-bl-[100px] rounded-tl-[30px] rounded-br-[30px] z-0"
                             />
 
                             {/* Solid Background Frame (Offset) */}
@@ -33,7 +33,7 @@ export default function About() {
                             <img
                                 src={siteConfig.doctor.image}
                                 alt={siteConfig.doctor.name}
-                                className="relative z-20 w-full h-full object-cover shadow-2xl rounded-tr-[100px] rounded-bl-[100px] rounded-tl-[30px] rounded-br-[30px]"
+                                className="relative z-20 w-full h-full object-cover object-top shadow-2xl rounded-tr-[100px] rounded-bl-[100px] rounded-tl-[30px] rounded-br-[30px]"
                             />
 
                             {/* Floating Badge */}
@@ -48,7 +48,7 @@ export default function About() {
                                 </div>
                                 <div>
                                     <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">{siteConfig.doctor.stats.label}</p>
-                                    <p className="text-accent font-bold text-lg">{siteConfig.doctor.stats.value}</p>
+                                    <p className="text-primary font-bold text-lg">{siteConfig.doctor.stats.value}</p>
                                 </div>
                             </motion.div>
                         </motion.div>
@@ -64,7 +64,7 @@ export default function About() {
                         <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">{siteConfig.doctor.label}</span>
                         <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4 font-serif">
                             <SplitText delay={0.2}>{siteConfig.doctor.name}</SplitText> <br />
-                            <span className="text-accent text-2xl md:text-3xl font-sans font-normal block mt-2">{siteConfig.doctor.qualification}</span>
+                            <span className="text-accent text-2xl md:text-3xl font-sans font-normal block mt-2" style={{ color: siteConfig.theme.colors.accent }}>{siteConfig.doctor.qualification}</span>
                         </h2>
 
                         <p className="text-gray-600 mb-6 leading-relaxed text-lg">
@@ -76,7 +76,7 @@ export default function About() {
                         </p>
 
                         <div className="flex items-center gap-8">
-                            <a href="#appointment" className="px-8 py-3 bg-primary text-white rounded-full font-bold shadow-lg hover:bg-opacity-90 transition-all transform hover:scale-105">
+                            <a href="#appointment" className="px-8 py-3 text-white rounded-full font-bold shadow-lg hover:opacity-90 transition-all transform hover:scale-105" style={{ background: "linear-gradient(90deg, #09E0A7 0%, #0DC6FF 100%)" }}>
                                 Book Appointment
                             </a>
                         </div>

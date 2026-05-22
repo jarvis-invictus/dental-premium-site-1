@@ -1,20 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import SplitText from "./SplitText";
+import { Phone } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 
 export default function Hero() {
 
     return (
-        <section id="home" className="relative w-full min-h-[800px] bg-[#FDFBF7] overflow-hidden flex items-center">
-            {/* Background Decorative Elements */}
-            {/* Large circle outline */}
-            <div className="absolute top-1/2 right-[-10%] w-[800px] h-[800px] border border-gray-100 rounded-full -translate-y-1/2 pointer-events-none"></div>
-            <div className="absolute top-1/2 right-[-5%] w-[600px] h-[600px] border border-dashed border-gray-200 rounded-full -translate-y-1/2 pointer-events-none"></div>
+        <section id="home" className="relative w-full min-h-[800px] bg-[#F8F8F8] overflow-hidden flex items-center">
+            {/* Subtle top-right mint corner wash — very light, matches reference */}
+            <div className="absolute top-0 right-0 w-[55%] h-full bg-gradient-to-bl from-teal-100/50 via-cyan-50/20 to-transparent pointer-events-none z-[-1]" />
 
-            <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 py-20 lg:py-0">
                 {/* Text Content */}
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
@@ -28,114 +25,183 @@ export default function Hero() {
                     >
                         {siteConfig.hero.tagline}
                     </span>
-                    <h1
-                        className="text-5xl md:text-7xl font-bold leading-[1.1] mb-6 font-serif"
-                        style={{ color: siteConfig.theme.colors.secondary }}
-                    >
-                        <SplitText delay={0.2}>{siteConfig.hero.headingLine1}</SplitText> <br />
-                        <span style={{ color: siteConfig.theme.colors.accent }}>
-                            <SplitText delay={0.6}>{siteConfig.hero.headingLine2}</SplitText>
+                    <h1 className="text-5xl md:text-6xl font-bold leading-[1.1] mb-6 font-serif text-gray-900">
+                        {siteConfig.hero.headingLine1}
+                        <br />
+                        <span style={{ color: siteConfig.theme.colors.primary }}>
+                            {siteConfig.hero.headingLine2}
                         </span>
                     </h1>
-                    <p className="text-gray-600 text-lg mb-8 leading-relaxed max-w-md">
+                    <p className="text-gray-600 text-lg mb-10 leading-relaxed max-w-md">
                         {siteConfig.hero.description}
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+                    <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
                         <a
-                            href={siteConfig.social.whatsapp}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center font-bold hover:opacity-80 transition-colors text-lg group"
-                            style={{ color: siteConfig.theme.colors.secondary }}
+                            href="#appointment"
+                            className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-bold text-lg shadow-lg hover:opacity-90 transition-all hover:scale-105"
+                            style={{ background: "linear-gradient(90deg, #09E0A7 0%, #0DC6FF 100%)" }}
                         >
-                            Chat With Us
-                            <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                            Book Appointment
                         </a>
+                    </div>
+
+                    {/* Trusted by patients — avatar pill widget */}
+                    <div className="mt-10 inline-flex items-center gap-3 bg-white border border-gray-100 rounded-full px-4 py-2 shadow-md">
+                        <div className="flex items-center">
+                            <img src="https://images.unsplash.com/photo-1621887348744-6b0444f8a058?w=40&h=40&fit=crop&crop=face" className="w-8 h-8 rounded-full ring-2 ring-white object-cover" alt="patient" />
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=40&h=40&fit=crop&crop=face" className="w-8 h-8 rounded-full ring-2 ring-white object-cover -ml-2" alt="patient" />
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=40&h=40&fit=crop&crop=face" className="w-8 h-8 rounded-full ring-2 ring-white object-cover -ml-2" alt="patient" />
+                            <img src="https://images.unsplash.com/photo-1546961342-ea5f62d5a27b?w=40&h=40&fit=crop&crop=face" className="w-8 h-8 rounded-full ring-2 ring-white object-cover -ml-2" alt="patient" />
+                        </div>
+                        <p className="text-sm text-gray-500">
+                            Trusted by <strong className="text-gray-800 font-semibold">500+</strong> patients
+                        </p>
                     </div>
                 </motion.div>
 
                 {/* Image Content */}
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                    animate={{
-                        opacity: 1,
-                        scale: 1,
-                        y: [0, -15, 0] // Gentle floating effect
-                    }}
-                    transition={{
-                        duration: 0.8,
-                        delay: 0.2,
-                        y: {
-                            duration: 4,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                            repeatType: "reverse"
-                        }
-                    }}
-                    className="relative"
+                    initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="relative w-full flex justify-center items-center py-10"
                 >
-                    {/* Circular Main Image Mask */}
-                    <div className="relative w-[400px] h-[400px] md:w-[500px] md:h-[500px] rounded-full overflow-hidden border-8 border-gray-100 bg-blue-50 mx-auto">
-                        <img
-                            src={siteConfig.images.hero}
-                            alt="Beautiful Smile"
-                            className="w-full h-full object-cover"
+                    {/* Outer positioning container — wider to accommodate infinity loop */}
+                    <div className="relative w-[380px] lg:w-[460px] aspect-square">
+
+                        {/* Orbital rings: two ellipses at different angles, dotted + animated, behind image */}
+                        <svg
+                            className="absolute"
+                            style={{
+                                top: "50%",
+                                left: "50%",
+                                transform: "translate(-50%, -50%)",
+                                width: "145%",
+                                height: "145%",
+                                zIndex: 0,
+                                pointerEvents: "none"
+                            }}
+                            viewBox="0 0 400 400"
+                            fill="none"
+                        >
+                            <defs>
+                                <style>{`
+                                    @keyframes orbitA {
+                                        from { stroke-dashoffset: 0; }
+                                        to   { stroke-dashoffset: -100; }
+                                    }
+                                    @keyframes orbitB {
+                                        from { stroke-dashoffset: 0; }
+                                        to   { stroke-dashoffset: 100; }
+                                    }
+                                    .ring-a { animation: orbitA 4s linear infinite; }
+                                    .ring-b { animation: orbitB 6s linear infinite; }
+                                `}</style>
+                            </defs>
+
+                            {/* Ring A — green, steep diagonal top-left to bottom-right (-45°) */}
+                            <ellipse
+                                cx="200" cy="200" rx="190" ry="55"
+                                stroke="#09E0A7"
+                                strokeWidth="1.5"
+                                fill="none"
+                                strokeDasharray="8 10"
+                                strokeLinecap="round"
+                                opacity="0.2"
+                                transform="rotate(-45, 200, 200)"
+                            />
+                            <ellipse
+                                className="ring-b"
+                                cx="200" cy="200" rx="190" ry="55"
+                                stroke="#09E0A7"
+                                strokeWidth="2.5"
+                                fill="none"
+                                strokeDasharray="6 37"
+                                strokeLinecap="round"
+                                opacity="0.65"
+                                transform="rotate(-45, 200, 200)"
+                            />
+
+                            {/* Ring B — cyan, steep diagonal top-right to bottom-left (+45°) */}
+                            <ellipse
+                                cx="200" cy="200" rx="190" ry="55"
+                                stroke="#0DC6FF"
+                                strokeWidth="1.5"
+                                fill="none"
+                                strokeDasharray="8 10"
+                                strokeLinecap="round"
+                                opacity="0.2"
+                                transform="rotate(45, 200, 200)"
+                            />
+                            <ellipse
+                                className="ring-a"
+                                cx="200" cy="200" rx="190" ry="55"
+                                stroke="#0DC6FF"
+                                strokeWidth="2.5"
+                                fill="none"
+                                strokeDasharray="6 37"
+                                strokeLinecap="round"
+                                opacity="0.6"
+                                transform="rotate(45, 200, 200)"
+                            />
+                        </svg>
+
+                        {/* Gradient ring: conic-gradient border */}
+                        <div
+                            className="absolute rounded-full"
+                            style={{
+                                inset: "-3px",
+                                background: "conic-gradient(from 180deg, #09E0A7 0deg, #0DC6FF 180deg, #09E0A7 360deg)",
+                                zIndex: 1,
+                                padding: "6px",
+                                boxShadow: "0 0 24px 2px rgba(9,224,167,0.15), 0 0 24px 2px rgba(13,198,255,0.15)"
+                            }}
+                        >
+                            <div className="w-full h-full rounded-full bg-white" />
+                        </div>
+
+                        {/* Main portrait */}
+                        <div className="absolute rounded-full overflow-hidden" style={{ inset: "9px", zIndex: 2 }}>
+                            <img
+                                src={siteConfig.images.hero}
+                                alt="Patient with beautiful smile at Smile Dental Clinic"
+                                className="w-full h-full object-cover object-top"
+                            />
+                        </div>
+
+                        {/* Icon 1: teeth.webp (simple tooth) — top-left, further out */}
+                        <motion.img
+                            src="/images/teeth.webp"
+                            alt="Happy teeth"
+                            className="absolute w-24 h-24 object-contain drop-shadow-xl"
+                            style={{ top: "-18%", left: "-14%", zIndex: 10 }}
+                            initial={{ opacity: 0, scale: 0.5 }}
+                            animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
+                            transition={{
+                                opacity: { delay: 0.9, duration: 0.5 },
+                                scale: { delay: 0.9, duration: 0.5 },
+                                y: { delay: 1.4, duration: 3, repeat: Infinity, ease: "easeInOut" }
+                            }}
+                        />
+
+                        {/* Icon 2: teethmoving.webp (character tooth) — bottom-right, further out */}
+                        <motion.img
+                            src="/images/teethmoving.webp"
+                            alt="Healthy teeth"
+                            className="absolute w-24 h-24 object-contain drop-shadow-xl"
+                            style={{ bottom: "-18%", right: "-14%", zIndex: 10 }}
+                            initial={{ opacity: 0, scale: 0.5 }}
+                            animate={{ opacity: 1, scale: 1, y: [0, 8, 0] }}
+                            transition={{
+                                opacity: { delay: 1.1, duration: 0.5 },
+                                scale: { delay: 1.1, duration: 0.5 },
+                                y: { delay: 1.6, duration: 3.5, repeat: Infinity, ease: "easeInOut" }
+                            }}
                         />
                     </div>
-
-                    {/* Floating "Offer" Badge */}
-                    {siteConfig.hero.offer.visible && (
-                        <div
-                            className="absolute top-10 left-0 md:left-10 text-white rounded-full w-32 h-32 md:w-40 md:h-40 flex flex-col items-center justify-center shadow-lg border-4 border-white/20 animate-bounce-slow"
-                            style={{ backgroundColor: siteConfig.theme.colors.primary }}
-                        >
-                            <span className="text-lg font-serif italic">{siteConfig.hero.offer.text}</span>
-                            <span className="text-4xl md:text-5xl font-bold">{siteConfig.hero.offer.value}</span>
-                        </div>
-                    )}
-
-                    {/* Decorative Curved Arrow (SVG) */}
-                    <div className="absolute bottom-10 left-0 w-24 h-24 text-gray-200 hidden md:block">
-                        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M10,10 Q50,90 90,50" />
-                            <path d="M80,45 L90,50 L85,60" />
-                        </svg>
-                    </div>
-
-                    {/* Decorative Icon Badge Bottom */}
-                    <div className="absolute bottom-0 right-10 md:right-20 bg-[#E8F5E9] p-4 rounded-full w-24 h-24 flex items-center justify-center shadow-xl">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2740/2740652.png" alt="Chair" className="w-12 h-12 opacity-80" />
-                    </div>
                 </motion.div>
-
             </div>
-
-            {/* Floating Decorative Elements */}
-            {
-                [
-                    { src: "/images/hero-floating-1.png", className: "top-20 left-[5%] md:left-[10%] w-16 md:w-20", delay: 0 },
-                    { src: "/images/hero-floating-2.png", className: "bottom-20 left-[10%] md:left-[45%] w-14 md:w-18", delay: 1.5 },
-                    { src: "/images/hero-floating-3.png", className: "top-32 right-[5%] w-12 md:w-16", delay: 0.8 },
-                ].map((item, index) => (
-                    <motion.img
-                        key={index}
-                        src={item.src}
-                        alt=""
-                        className={`absolute opacity-80 pointer-events-none drop-shadow-lg ${item.className}`}
-                        animate={{
-                            y: [-10, 10, -10],
-                            rotate: [0, 5, -5, 0],
-                        }}
-                        transition={{
-                            duration: 5 + index,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                            delay: item.delay,
-                        }}
-                    />
-                ))
-            }
-        </section >
+        </section>
     );
 }

@@ -1,12 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  /* Fallbacks */
-  --primary: #00A651;
-  --secondary: #434E96;
-  --accent: #C5A059;
+  --background: #F3F5F9;
+  --foreground: #000000;
+  --primary: #09E0A7;
+  --secondary: #0A0A0A;
+  --accent: #0DC6FF;
 }
 
 @theme inline {
@@ -15,11 +14,21 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
-  --font-sans: var(--font-outfit), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+  --font-display: var(--font-inter-display), sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: #000000;
+}
+
+p, span, li, a {
+  color: inherit;
 }

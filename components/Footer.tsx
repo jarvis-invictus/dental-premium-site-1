@@ -13,13 +13,12 @@ export default function Footer() {
                             <div>
                                 <div
                                     className="text-xl font-bold leading-tight font-serif tracking-wide"
-                                    style={{ color: siteConfig.theme.colors.accent }}
+                                    style={{ color: siteConfig.theme.colors.primary }}
                                 >
                                     {siteConfig.name}
                                 </div>
                                 <div
-                                    className="text-xs font-bold tracking-widest uppercase"
-                                    style={{ color: siteConfig.theme.colors.primary }}
+                                    className="text-xs font-bold tracking-widest uppercase text-gray-400"
                                 >
                                     {siteConfig.subtitle}
                                 </div>
@@ -60,7 +59,7 @@ export default function Footer() {
                             <li className="flex gap-3">
                                 <MapPin
                                     className="w-5 h-5 shrink-0"
-                                    style={{ color: siteConfig.theme.colors.secondary }}
+                                    style={{ color: siteConfig.theme.colors.primary }}
                                 />
                                 <a
                                     href={siteConfig.address.googleMapsLink}
@@ -76,7 +75,7 @@ export default function Footer() {
                             <li className="flex gap-3 items-start">
                                 <Phone
                                     className="w-5 h-5 shrink-0 mt-1"
-                                    style={{ color: siteConfig.theme.colors.secondary }}
+                                    style={{ color: siteConfig.theme.colors.primary }}
                                 />
                                 <div className="flex flex-col gap-1">
                                     <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="hover:text-white transition-colors">{siteConfig.phone}</a>
@@ -88,7 +87,7 @@ export default function Footer() {
                             <li className="flex gap-3 items-center">
                                 <Mail
                                     className="w-5 h-5 shrink-0"
-                                    style={{ color: siteConfig.theme.colors.secondary }}
+                                    style={{ color: siteConfig.theme.colors.primary }}
                                 />
                                 <a href={`mailto:${siteConfig.email}`} className="hover:text-white transition-colors">{siteConfig.email}</a>
                             </li>
@@ -121,8 +120,15 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm space-y-2">
                     <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All Rights Reserved. | Powered by <a href="https://invictus-ai.in" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">Invictus AI</a></p>
+                    <div className="flex items-center justify-center gap-4 text-gray-600 text-xs">
+                        <a href="/privacy-policy" className="hover:text-gray-300 transition-colors">Privacy Policy</a>
+                        <span>·</span>
+                        <a href="/terms-of-service" className="hover:text-gray-300 transition-colors">Terms of Service</a>
+                        <span>·</span>
+                        <a href="/disclaimer" className="hover:text-gray-300 transition-colors">Disclaimer</a>
+                    </div>
                 </div>
             </div>
         </footer>

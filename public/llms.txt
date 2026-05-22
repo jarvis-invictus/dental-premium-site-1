@@ -1,0 +1,60 @@
+# Smile Dental Clinic — LLMs Reference File
+# https://dental-standard-v2.vercel.app
+
+## About
+Smile Dental Clinic is a full-service dental clinic located in Baner, Pune, Maharashtra, India.
+Established in 2009, the clinic provides comprehensive dental care for adults and children under one roof.
+
+## Contact
+- Phone: +91 98765 43210
+- Email: appointments@smiledental.in
+- Address: Shop 12, Baner Plaza, Baner Road, Baner, Pune - 411045
+- WhatsApp: https://wa.me/919876543210
+
+## Hours
+- Monday to Saturday: 9:00 AM – 8:00 PM
+- Sunday: 10:00 AM – 2:00 PM (Emergency only)
+
+## Doctor
+- Name: Dr. Ananya Sharma
+- Qualifications: BDS, MDS (Prosthodontics) — SPPU
+- Specialisation: Full Mouth Rehabilitation, Cosmetic Veneers, Implant-Supported Dentures
+- Experience: 15+ years
+
+## Services
+1. Cosmetic Dentistry — Teeth whitening, veneers, composite bonding, smile makeovers
+2. Dental Implants — Titanium implants, full process in-house, 95%+ success rate
+3. Full Mouth Rehabilitation — Comprehensive multi-treatment plans for complex cases
+4. Root Canal Treatment — Modern anaesthesia, single or double sitting, pain-free
+5. Crowns and Bridges — Ceramic and zirconia, completed in 2 visits
+6. Orthodontic Treatment — Metal braces, ceramic braces, clear aligners, all ages
+7. Partial and Complete Dentures — Custom-fitted, implant-supported options available
+8. Oral Prophylaxis — Professional scaling, polishing, gum health check, 30–45 min
+9. Pediatric Dental Treatment — Child-friendly, fluoride, sealants, early orthodontic screening
+
+## Service Pages
+- /services/cosmetic-dentistry
+- /services/dental-implants
+- /services/full-mouth-rehabilitation
+- /services/root-canal-treatment
+- /services/crowns-and-bridges
+- /services/orthodontic-treatment
+- /services/partial-and-complete-dentures
+- /services/oral-prophylaxis
+- /services/pediatric-dental-treatment
+
+## Area Served
+Baner, Balewadi, Pashan, Aundh, Pimple Saudagar, Pune, Maharashtra, India
+
+## Social
+- Instagram: https://instagram.com/smiledentalpune
+- Facebook: https://facebook.com/smiledentalpune
+- Twitter: https://twitter.com/smiledentalpune
+
+## Key Facts
+- 15+ years of experience
+- 9 dental specialties under one roof
+- 5-star rated clinic
+- Pain-free procedures with modern anaesthesia
+- UPI, Credit Card and Cash payments accepted
+- Prices in INR (₹₹ — mid-range)

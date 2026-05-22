@@ -3,39 +3,18 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
-
-const faqs = [
-    {
-        question: "How often should I visit the dentist?",
-        answer: "We recommend visiting every 6 months for a routine checkup and cleaning. This helps catch any issues early and maintains optimal oral health."
-    },
-    {
-        question: "Does a Root Canal treatment hurt?",
-        answer: "With modern anesthesia and technology, a root canal is typically no more uncomfortable than a standard filling. Our priority is your comfort."
-    },
-    {
-        question: "What are your clinic hours?",
-        answer: "We are open from 10:00 AM to 9:00 PM, Monday through Saturday. We also offer emergency appointments if needed."
-    },
-    {
-        question: "Do you offer teeth whitening?",
-        answer: "Yes, we offer professional teeth whitening services that are safe and effective, providing much better results than over-the-counter kits."
-    },
-    {
-        question: "How long do dental implants last?",
-        answer: "With proper care and maintenance, dental implants can last a lifetime. They are a durable and long-term solution for missing teeth."
-    }
-];
+import { siteConfig } from "@/lib/site-config";
 
 export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
+    const faqs = siteConfig.faqs;
 
     return (
         <section className="py-20 bg-white">
             <div className="container mx-auto px-4 max-w-4xl">
                 <div className="text-center mb-12">
                     <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Common Questions</span>
-                    <h2 className="text-4xl font-bold text-secondary mb-4 font-serif">
+                    <h2 className="text-4xl font-bold text-secondary mb-4">
                         Common Questions <span className="text-primary">Answered</span>
                     </h2>
                 </div>

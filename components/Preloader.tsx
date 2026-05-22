@@ -14,7 +14,7 @@ export default function Preloader() {
         const timer = setTimeout(() => {
             setIsLoading(false);
             document.body.style.overflow = "auto";
-        }, 2500);
+        }, 1200);
 
         return () => {
             clearTimeout(timer);
@@ -29,7 +29,7 @@ export default function Preloader() {
                     key="preloader"
                     initial={{ opacity: 1 }}
                     exit={{ y: "-100%", transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }}
-                    className="fixed inset-0 z-[9999] bg-[#FDFBF7] flex items-center justify-center"
+                    className="fixed inset-0 z-[9999] bg-[#F3F5F9] flex items-center justify-center"
                 >
                     <div className="flex flex-col items-center">
                         <motion.div
@@ -51,8 +51,8 @@ export default function Preloader() {
                                 initial={{ y: "100%" }}
                                 animate={{ y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.2, ease: "circOut" }}
-                                className="text-3xl md:text-5xl font-serif font-bold mb-2 overflow-hidden block tracking-wide"
-                                style={{ color: siteConfig.theme.colors.accent }}
+                                className="text-3xl md:text-5xl font-bold mb-2 overflow-hidden block tracking-wide"
+                                style={{ color: siteConfig.theme.colors.primary }}
                             >
                                 {siteConfig.name}
                             </motion.h1>
@@ -72,7 +72,7 @@ export default function Preloader() {
                             animate={{ width: "100px" }}
                             transition={{ duration: 1, delay: 0.5, ease: "easeInOut" }}
                             className="h-1 rounded-full mt-6"
-                            style={{ backgroundColor: siteConfig.theme.colors.accent }}
+                            style={{ background: "linear-gradient(90deg, #09E0A7 0%, #0DC6FF 100%)" }}
                         />
                     </div>
                 </motion.div>

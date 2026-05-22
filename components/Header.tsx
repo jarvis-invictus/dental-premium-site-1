@@ -26,7 +26,7 @@ export default function Header() {
     ];
 
     return (
-        <header className={`w-full z-50 transition-all duration-300 sticky top-0 ${isScrolled ? "bg-white/95 backdrop-blur-sm shadow-md" : "bg-white"}`}>
+        <header className="w-full z-50 sticky top-0">
             {/* Top Bar */}
             <div
                 className="text-white py-2 text-sm hidden md:block"
@@ -49,30 +49,34 @@ export default function Header() {
                             <span>{siteConfig.phone}</span>
                         </a>
                         <div className="flex items-center gap-3 border-l border-white/20 pl-4">
-                            {/* Placeholders for social icons */}
-                            <Instagram className="w-4 h-4 hover:opacity-80 cursor-pointer" />
-                            <Facebook className="w-4 h-4 hover:opacity-80 cursor-pointer" />
+                            <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <Instagram className="w-4 h-4 hover:opacity-80 cursor-pointer" />
+                            </a>
+                            <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                <Facebook className="w-4 h-4 hover:opacity-80 cursor-pointer" />
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Main Navigation */}
-            <div className="container mx-auto px-4 py-4">
-                <div className="flex justify-between items-center">
+            {/* Main Navigation — floating pill */}
+            <div className={`transition-all duration-300 ${isScrolled ? "py-2" : "py-3"}`}>
+                <div className="container mx-auto px-4">
+                <div className={`flex justify-between items-center rounded-2xl px-6 py-3 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-white/90 backdrop-blur-sm shadow-md"}`}>
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-3 group">
                         <img src={siteConfig.images.logo} alt="Logo" className="h-12 w-auto object-contain transform group-hover:scale-110 transition-transform duration-300" />
                         <div>
                             <div
-                                className="text-xl md:text-2xl font-bold leading-tight font-serif tracking-wide"
-                                style={{ color: siteConfig.theme.colors.accent }}
+                                className="text-xl md:text-2xl font-bold leading-tight tracking-wide"
+                                style={{ color: siteConfig.theme.colors.primary }}
                             >
                                 {siteConfig.name}
                             </div>
                             <div
                                 className="text-[0.6rem] md:text-xs font-bold tracking-widest uppercase"
-                                style={{ color: siteConfig.theme.colors.primary }}
+                                style={{ color: siteConfig.theme.colors.secondary }}
                             >
                                 {siteConfig.subtitle}
                             </div>
@@ -91,7 +95,7 @@ export default function Header() {
                                 <span className="hover:text-primary transition-colors">{link.name}</span>
                                 <span
                                     className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all group-hover:w-full"
-                                    style={{ backgroundColor: siteConfig.theme.colors.secondary }}
+                                    style={{ backgroundColor: siteConfig.theme.colors.primary }}
                                 ></span>
                             </Link>
                         ))}
@@ -111,6 +115,7 @@ export default function Header() {
                     >
                         {isMobileMenuOpen ? <X /> : <Menu />}
                     </button>
+                </div>
                 </div>
             </div>
 

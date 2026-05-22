@@ -3,7 +3,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Link from "next/link";
 import { services } from "@/lib/services_data";
-import React, { useRef } from "react";
+import React from "react";
 
 function TiltCard({ children, className }: { children: React.ReactNode; className?: string }) {
     const x = useMotionValue(0);
@@ -47,16 +47,35 @@ function TiltCard({ children, className }: { children: React.ReactNode; classNam
     );
 }
 
-import SplitText from "./SplitText";
+function ArrowRightIcon() {
+    return (
+        <svg
+            className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+        >
+            <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+            />
+        </svg>
+    );
+}
 
 export default function Services() {
     return (
         <section id="services" className="py-20 bg-gray-50">
             <div className="container mx-auto px-4">
                 <div className="text-center max-w-2xl mx-auto mb-16">
-                    <h3 className="text-primary font-semibold uppercase tracking-wider mb-2">Treatments</h3>
-                    <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4 font-serif">
-                        <SplitText>Complete</SplitText> <span className="text-accent"><SplitText delay={0.3}>Dental Solutions</SplitText></span>
+                    <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-semibold rounded-full mb-4">
+                        Treatments
+                    </span>
+                    <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4">
+                        Complete Dental Solutions
                     </h2>
                     <p className="text-gray-600">
                         Click on any service to learn more about our procedures and treatments.
@@ -66,7 +85,7 @@ export default function Services() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
                         <motion.div
-                            key={index}
+                            key={service.slug}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1, duration: 0.5 }}
@@ -76,38 +95,48 @@ export default function Services() {
                             <TiltCard>
                                 <Link
                                     href={`/services/${service.slug}`}
-                                    className="bg-white p-8 border border-gray-100 group text-left flex flex-col items-start hover:shadow-2xl hover:border-primary/20 transition-all cursor-pointer h-full relative rounded-2xl"
+                                    className="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 p-6 h-full"
                                     style={{ transform: "translateZ(20px)" }}
                                 >
-                                    <div className="mb-6 text-secondary group-hover:text-primary transition-colors relative z-10 bg-white p-2 rounded-lg" style={{ transform: "translateZ(30px)" }}>
-                                        <div className="w-16 h-16 relative">
+                                    {/* Icon box */}
+                                    <div
+                                        className="w-20 h-20 rounded-3xl bg-gray-100 flex items-center justify-center mb-6 flex-shrink-0 group-hover:bg-primary/10 transition-colors duration-300"
+                                        style={{ transform: "translateZ(30px)" }}
+                                    >
+                                        {service.svgSrc ? (
                                             <img
-                                                src={service.image}
-                                                alt={service.title}
-                                                className="w-full h-full object-contain group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500 ease-in-out"
+                                                src={service.svgSrc}
+                                                alt={`${service.title} icon`}
+                                                className="w-16 h-16 object-contain rounded-2xl"
                                             />
-                                        </div>
+                                        ) : (
+                                            <div className="w-16 h-16 rounded-2xl bg-primary/20" />
+                                        )}
                                     </div>
+
+                                    {/* Title */}
                                     <h3
-                                        className="text-xl font-bold text-secondary mb-3 font-serif min-h-[56px] flex items-center group-hover:text-primary transition-colors"
+                                        className="text-base font-bold text-secondary mb-2 leading-snug group-hover:text-primary transition-colors"
                                         style={{ transform: "translateZ(25px)" }}
                                     >
                                         {service.title}
                                     </h3>
+
+                                    {/* Description */}
                                     <p
-                                        className="text-gray-500 mb-6 leading-relaxed line-clamp-3 text-sm flex-grow"
+                                        className="text-sm text-gray-500 leading-relaxed line-clamp-3 flex-1 mb-5"
                                         style={{ transform: "translateZ(20px)" }}
                                     >
                                         {service.short}
                                     </p>
 
-                                    <span
-                                        className="inline-flex items-center font-bold text-primary hover:text-secondary transition-colors group-inner mt-auto"
-                                        style={{ transform: "translateZ(30px)" }}
-                                    >
-                                        Learn more
-                                        <span className="ml-2 transform group-hover:translate-x-1 transition-transform">→</span>
-                                    </span>
+                                    {/* Learn More link */}
+                                    <div className="mt-auto" style={{ transform: "translateZ(30px)" }}>
+                                        <span className="group inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-secondary transition-colors duration-200">
+                                            Learn More
+                                            <ArrowRightIcon />
+                                        </span>
+                                    </div>
                                 </Link>
                             </TiltCard>
                         </motion.div>

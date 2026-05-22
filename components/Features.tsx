@@ -20,8 +20,8 @@ export default function Features() {
                     <div className="hidden lg:block relative">
                         <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white h-[500px] border border-gray-100 group">
                             <img
-                                src="/images/why-choose-us-dentist-hd.png"
-                                alt="Dental Team High Quality"
+                                src={siteConfig.images.features}
+                                alt="Smile Dental Clinic team"
                                 className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
                             />
                         </div>
@@ -30,8 +30,8 @@ export default function Features() {
                     {/* Right: Content */}
                     <div>
                         <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">{siteConfig.features.title}</span>
-                        <h2 className="text-4xl font-bold text-secondary mb-8 font-serif">
-                            <SplitText delay={0.2}>{siteConfig.features.headingLine1}</SplitText> <span className="text-accent"><SplitText delay={0.5}>{siteConfig.features.headingLine2}</SplitText></span>
+                        <h2 className="text-4xl font-bold text-secondary mb-8">
+                            <SplitText delay={0.2}>{siteConfig.features.headingLine1}</SplitText> <span style={{ color: "#09E0A7" }}><SplitText delay={0.5}>{siteConfig.features.headingLine2}</SplitText></span>
                         </h2>
                         <p className="text-gray-600 mb-10">
                             {siteConfig.features.description}
