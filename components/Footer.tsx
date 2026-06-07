@@ -121,7 +121,18 @@ export default function Footer() {
                 </div>
 
                 <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm space-y-2">
-                    <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All Rights Reserved. | Powered by <a href="https://invictus-ai.in" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">Invictus AI</a></p>
+                    <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All Rights Reserved.</p>
+                    <p className="text-gray-500 text-sm mt-2">
+                        Powered by{" "}
+                        <a
+                            href="https://invictus-ai.in/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white font-bold tracking-wide hover:text-primary transition-colors"
+                        >
+                            Invictus AI
+                        </a>
+                    </p>
                     <div className="flex items-center justify-center gap-4 text-gray-600 text-xs">
                         <a href="/privacy-policy" className="hover:text-gray-300 transition-colors">Privacy Policy</a>
                         <span>·</span>
