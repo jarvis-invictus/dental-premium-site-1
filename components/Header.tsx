@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Phone, MapPin, Clock, Menu, X, Facebook, Instagram } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { siteConfig } from "@/lib/site-config";
+import { clinicConfig } from "@/lib/clinic-config";
 
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -22,7 +22,7 @@ export default function Header() {
         { name: "Home", href: "#home" },
         { name: "Services", href: "#services" },
         { name: "About", href: "#about" },
-        { name: "Contact", href: siteConfig.social.whatsapp },
+        { name: "Contact", href: clinicConfig.social.whatsapp_link },
     ];
 
     return (
@@ -30,29 +30,29 @@ export default function Header() {
             {/* Top Bar */}
             <div
                 className="text-white py-2 text-sm hidden md:block"
-                style={{ backgroundColor: siteConfig.theme.colors.primary }}
+                style={{ backgroundColor: clinicConfig.theme.primary_color }}
             >
                 <div className="container mx-auto px-4 flex justify-between items-center">
                     <div className="flex space-x-6">
                         <div className="flex items-center gap-2">
                             <MapPin className="w-4 h-4" />
-                            <span>{siteConfig.address.line1} {siteConfig.address.line2}</span>
+                            <span>{clinicConfig.contact.address_full} {clinicConfig.contact.address_full}</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <Clock className="w-4 h-4" />
-                            <span>{siteConfig.timing}</span>
+                            <span>{clinicConfig.hours.map(h => h.from ? `${h.day}: ${h.from}-${h.to}` : '').join(', ')}</span>
                         </div>
                     </div>
                     <div className="flex items-center gap-4">
-                        <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                        <a href={`tel:${clinicConfig.contact.phone_primary.replace(/\s/g, "")}`} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                             <Phone className="w-4 h-4" />
-                            <span>{siteConfig.phone}</span>
+                            <span>{clinicConfig.contact.phone_primary}</span>
                         </a>
                         <div className="flex items-center gap-3 border-l border-white/20 pl-4">
-                            <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <a href={clinicConfig.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                                 <Instagram className="w-4 h-4 hover:opacity-80 cursor-pointer" />
                             </a>
-                            <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <a href={clinicConfig.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                                 <Facebook className="w-4 h-4 hover:opacity-80 cursor-pointer" />
                             </a>
                         </div>
@@ -66,19 +66,19 @@ export default function Header() {
                 <div className={`flex justify-between items-center rounded-2xl px-6 py-3 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-white/90 backdrop-blur-sm shadow-md"}`}>
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-3 group">
-                        <img src={siteConfig.images.logo} alt="Logo" className="h-12 w-auto object-contain transform group-hover:scale-110 transition-transform duration-300" />
+                        <img src={"/images/logo.png"} alt="Logo" className="h-12 w-auto object-contain transform group-hover:scale-110 transition-transform duration-300" />
                         <div>
                             <div
                                 className="text-xl md:text-2xl font-bold leading-tight tracking-wide"
-                                style={{ color: siteConfig.theme.colors.primary }}
+                                style={{ color: clinicConfig.theme.primary_color }}
                             >
-                                {siteConfig.name}
+                                {clinicConfig.name}
                             </div>
                             <div
                                 className="text-[0.6rem] md:text-xs font-bold tracking-widest uppercase"
-                                style={{ color: siteConfig.theme.colors.secondary }}
+                                style={{ color: clinicConfig.theme.primary_color }}
                             >
-                                {siteConfig.subtitle}
+                                {clinicConfig.tagline}
                             </div>
                         </div>
                     </Link>
@@ -95,14 +95,14 @@ export default function Header() {
                                 <span className="hover:text-primary transition-colors">{link.name}</span>
                                 <span
                                     className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all group-hover:w-full"
-                                    style={{ backgroundColor: siteConfig.theme.colors.primary }}
+                                    style={{ backgroundColor: clinicConfig.theme.primary_color }}
                                 ></span>
                             </Link>
                         ))}
                         <Link
                             href="#appointment"
                             className="text-white px-6 py-2.5 rounded-full font-medium transition-all transform hover:scale-105 shadow-lg"
-                            style={{ backgroundColor: siteConfig.theme.colors.primary }}
+                            style={{ backgroundColor: clinicConfig.theme.primary_color }}
                         >
                             Book Appointment
                         </Link>
@@ -155,7 +155,7 @@ export default function Header() {
                                 <Link
                                     href="#appointment"
                                     className="block text-white text-center py-4 rounded-xl font-bold mt-4 shadow-lg active:scale-95 transition-transform"
-                                    style={{ backgroundColor: siteConfig.theme.colors.primary }}
+                                    style={{ backgroundColor: clinicConfig.theme.primary_color }}
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                     Book Appointment

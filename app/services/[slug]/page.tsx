@@ -3,17 +3,17 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { Metadata } from "next";
-import { siteConfig } from "@/lib/site-config";
+import { clinicConfig } from "@/lib/clinic-config";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
     const service = services.find(s => s.slug === slug);
     if (!service) return { title: "Service Not Found" };
     return {
-        title: `${service.title} | ${siteConfig.name}`,
+        title: `${service.title} | ${clinicConfig.name}`,
         description: service.short,
         openGraph: {
-            title: `${service.title} | ${siteConfig.name}`,
+            title: `${service.title} | ${clinicConfig.name}`,
             description: service.short,
             images: [{ url: service.image }],
         },
@@ -29,8 +29,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     const prevService = serviceIndex > 0 ? services[serviceIndex - 1] : null;
     const nextService = serviceIndex < services.length - 1 ? services[serviceIndex + 1] : null;
 
-    const waText = `Hi, I am interested in ${service.title} at ${siteConfig.name}. Could you please share more details?`;
-    const waPhone = siteConfig.phone.replace(/\D/g, "");
+    const waText = `Hi, I am interested in ${service.title} at ${clinicConfig.name}. Could you please share more details?`;
+    const waPhone = clinicConfig.contact.phone_primary.replace(/\D/g, "");
 
     return (
         <main className="min-h-screen bg-white">
@@ -43,7 +43,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                     </Link>
                     <div className="hidden md:flex items-center gap-6 text-sm">
                         <a href={`tel:${waPhone}`} className="flex items-center gap-2 hover:text-accent transition-colors">
-                            <Phone className="w-4 h-4 text-accent" /> {siteConfig.phone}
+                            <Phone className="w-4 h-4 text-accent" /> {clinicConfig.contact.phone_primary}
                         </a>
                     </div>
                 </div>
@@ -135,11 +135,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                                 <div className="pt-2 border-t border-gray-100 text-center space-y-1">
                                     <p className="text-xs text-gray-400 uppercase tracking-wider">Or call directly</p>
                                     <a href={`tel:${waPhone}`} className="block text-lg font-bold text-secondary hover:text-primary transition-colors">
-                                        {siteConfig.phone}
+                                        {clinicConfig.contact.phone_primary}
                                     </a>
-                                    {siteConfig.phoneSecondary && (
-                                        <a href={`tel:${siteConfig.phoneSecondary.replace(/\D/g, "")}`} className="block text-base font-semibold text-gray-500 hover:text-primary transition-colors">
-                                            {siteConfig.phoneSecondary}
+                                    {clinicConfig.contact.phone_primary && (
+                                        <a href={`tel:${clinicConfig.contact.phone_primary.replace(/\D/g, "")}`} className="block text-base font-semibold text-gray-500 hover:text-primary transition-colors">
+                                            {clinicConfig.contact.phone_primary}
                                         </a>
                                     )}
                                 </div>

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Users, HeartPulse, Pill, type LucideIcon } from "lucide-react";
 import SplitText from "./SplitText";
-import { siteConfig } from "@/lib/site-config";
+import { clinicConfig } from "@/lib/clinic-config";
 
 const iconMap: Record<string, LucideIcon> = {
     "Users": Users,
@@ -20,7 +20,7 @@ export default function Features() {
                     <div className="hidden lg:block relative">
                         <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white h-[500px] border border-gray-100 group">
                             <img
-                                src={siteConfig.images.features}
+                                src={"/images/why-choose-us-dentist-hd.png"}
                                 alt="Smile Dental Clinic team"
                                 className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
                             />
@@ -29,16 +29,16 @@ export default function Features() {
 
                     {/* Right: Content */}
                     <div>
-                        <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">{siteConfig.features.title}</span>
+                        <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">{'Why Patients Choose Us'}</span>
                         <h2 className="text-4xl font-bold text-secondary mb-8">
-                            <SplitText delay={0.2}>{siteConfig.features.headingLine1}</SplitText> <span style={{ color: "#09E0A7" }}><SplitText delay={0.5}>{siteConfig.features.headingLine2}</SplitText></span>
+                            <SplitText delay={0.2}>{'Modern Equipment,'}</SplitText> <span style={{ color: "#09E0A7" }}><SplitText delay={0.5}>{'Gentle Hands'}</SplitText></span>
                         </h2>
                         <p className="text-gray-600 mb-10">
-                            {siteConfig.features.description}
+                            {'Equipped with digital X-rays, intraoral cameras, and laser-assisted tools. Your comfort and safety are our top priority.'}
                         </p>
 
                         <div className="space-y-8">
-                            {siteConfig.features.items.map((feature, idx) => {
+                            {[{icon: 'Users', title: 'Expert Team', desc: 'MDS-qualified dentists with 15+ years of combined experience across 9 specialties.'}, {icon: 'HeartPulse', title: 'Advanced Equipment', desc: 'Digital X-rays, intraoral scanners, and laser-assisted procedures for precise treatment.'}, {icon: 'Pill', title: 'Pain-Free Dentistry', desc: 'Modern anesthetic techniques and sedation options. Most patients say they barely felt a thing.'}].map((feature, idx) => {
                                 const IconComponent = iconMap[feature.icon] || Users;
                                 return (
                                     <motion.div

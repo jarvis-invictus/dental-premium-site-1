@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
-import { siteConfig } from "@/lib/site-config";
+import { clinicConfig } from "@/lib/clinic-config";
 
 export default function Hero() {
 
@@ -21,19 +21,19 @@ export default function Hero() {
                 >
                     <span
                         className="uppercase tracking-[0.2em] text-sm font-bold mb-4 block"
-                        style={{ color: siteConfig.theme.colors.primary }}
+                        style={{ color: clinicConfig.theme.primary_color }}
                     >
-                        {siteConfig.hero.tagline}
+                        {'Baner, Pune'}
                     </span>
                     <h1 className="text-5xl md:text-6xl font-bold leading-[1.1] mb-6 font-serif text-gray-900">
-                        {siteConfig.hero.headingLine1}
+                        {'Bring Back Your'}
                         <br />
-                        <span style={{ color: siteConfig.theme.colors.primary }}>
-                            {siteConfig.hero.headingLine2}
+                        <span style={{ color: clinicConfig.theme.primary_color }}>
+                            {'Natural Smile with Confidence'}
                         </span>
                     </h1>
                     <p className="text-gray-600 text-lg mb-10 leading-relaxed max-w-md">
-                        {siteConfig.hero.description}
+                        {'Comprehensive dental care for your entire family. From routine checkups and cleanings to cosmetic procedures and implants — all under one roof.'}
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
@@ -164,7 +164,7 @@ export default function Hero() {
                         {/* Main portrait */}
                         <div className="absolute rounded-full overflow-hidden" style={{ inset: "9px", zIndex: 2 }}>
                             <img
-                                src={siteConfig.images.hero}
+                                src={"/images/hero.avif"}
                                 alt="Patient with beautiful smile at Smile Dental Clinic"
                                 className="w-full h-full object-cover object-top"
                             />

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import SplitText from "./SplitText";
-import { siteConfig } from "@/lib/site-config";
+import { clinicConfig } from "@/lib/clinic-config";
 
 export default function About() {
     return (
@@ -31,8 +31,8 @@ export default function About() {
 
                             {/* Main Image */}
                             <img
-                                src={siteConfig.doctor.image}
-                                alt={siteConfig.doctor.name}
+                                src={clinicConfig.doctors[0].photo}
+                                alt={clinicConfig.doctors[0].name}
                                 className="relative z-20 w-full h-full object-cover object-top shadow-2xl rounded-tr-[100px] rounded-bl-[100px] rounded-tl-[30px] rounded-br-[30px]"
                             />
 
@@ -47,8 +47,8 @@ export default function About() {
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><path d="M12 5.5c-1.7-2-4.5-2-6 0s-1.5 5.5 0 10c.5 1.5 1 3 2 4 1.5 1.5 3 1 3.5-1 .3-1.5.5-2.5.5-2.5s.2 1 .5 2.5c.5 2 2 2.5 3.5 1 1-1 1.5-2.5 2-4 1.5-4.5 1.5-8 0-10s-4.3-2-6 0z"/></svg>
                                 </div>
                                 <div>
-                                    <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">{siteConfig.doctor.stats.label}</p>
-                                    <p className="text-primary font-bold text-lg">{siteConfig.doctor.stats.value}</p>
+                                    <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">{'Experience'}</p>
+                                    <p className="text-primary font-bold text-lg">{clinicConfig.stats.years_experience}</p>
                                 </div>
                             </motion.div>
                         </motion.div>
@@ -61,18 +61,18 @@ export default function About() {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">{siteConfig.doctor.label}</span>
+                        <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">{'Meet The Dentist'}</span>
                         <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4 font-serif">
-                            <SplitText delay={0.2}>{siteConfig.doctor.name}</SplitText> <br />
-                            <span className="text-accent text-2xl md:text-3xl font-sans font-normal block mt-2" style={{ color: siteConfig.theme.colors.accent }}>{siteConfig.doctor.qualification}</span>
+                            <SplitText delay={0.2}>{clinicConfig.doctors[0].name}</SplitText> <br />
+                            <span className="text-accent text-2xl md:text-3xl font-sans font-normal block mt-2" style={{ color: clinicConfig.theme.accent_color }}>{clinicConfig.doctors[0].qualifications}</span>
                         </h2>
 
                         <p className="text-gray-600 mb-6 leading-relaxed text-lg">
-                            {siteConfig.doctor.description1}
+                            {clinicConfig.doctors[0].bio}
                         </p>
 
                         <p className="text-gray-600 mb-8 leading-relaxed">
-                            {siteConfig.doctor.description2}
+                            {''}
                         </p>
 
                         <div className="flex items-center gap-8">

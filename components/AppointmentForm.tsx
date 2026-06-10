@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { siteConfig } from "@/lib/site-config";
+import { clinicConfig } from "@/lib/clinic-config";
 import { services } from "@/lib/services_data";
 
 /* ── Time slots: 9am–8pm, 30-min intervals ────────────────────────────────── */
@@ -119,7 +119,7 @@ export default function AppointmentForm() {
         };
 
         // Send to WhatsApp
-        const wa = siteConfig.phone.replace(/\D/g, "");
+        const wa = clinicConfig.contact.phone_primary.replace(/\D/g, "");
         const msg = [
             `*New Appointment Request*`,
             `Name: ${payload.name}`,
@@ -260,7 +260,7 @@ export default function AppointmentForm() {
                                     className="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary cursor-pointer"
                                 />
                                 <span className="text-sm text-gray-700 group-hover:text-secondary transition-colors">
-                                    I&apos;m a new patient at {siteConfig.name}
+                                    I&apos;m a new patient at {clinicConfig.name}
                                 </span>
                             </label>
 

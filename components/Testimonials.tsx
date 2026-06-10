@@ -1,7 +1,7 @@
 "use client";
 
 import { Star } from "lucide-react";
-import { siteConfig } from "@/lib/site-config";
+import { clinicConfig } from "@/lib/clinic-config";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useState, useEffect, useCallback } from "react";
@@ -24,7 +24,7 @@ function StarRating({ rating }: { rating: number }) {
 }
 
 export default function Testimonials() {
-    const testimonials = siteConfig.testimonials.items;
+    const testimonials = clinicConfig.testimonials;
     const [emblaRef, emblaApi] = useEmblaCarousel(
         { loop: true, align: "start", slidesToScroll: 1 },
         [Autoplay({ delay: 5000, stopOnInteraction: false })]
@@ -74,19 +74,17 @@ export default function Testimonials() {
                                 className="flex-[0_0_100%] min-w-0 md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)]"
                             >
                                 <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col gap-4 hover:shadow-md transition-shadow h-full">
-                                    <StarRating rating={item.stars} />
+                                    <StarRating rating={item.rating} />
                                     <p className="text-gray-600 leading-relaxed text-sm flex-1">
-                                        &ldquo;{item.content}&rdquo;
+                                        &ldquo;{item.text}&rdquo;
                                     </p>
-                                    <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-                                        <img
-                                            src={item.image}
-                                            alt={item.name}
-                                            className="w-10 h-10 rounded-full object-cover"
-                                        />
+                                    <div className="flex items-center gap-3 pt-4 border-t border-gray-50 mt-auto">
+                                        <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden flex-shrink-0">
+                                            {/* item.image was removed from standard config, fall back to avatar */}
+                                        </div>
                                         <div>
-                                            <p className="text-sm font-semibold text-secondary">{item.name}</p>
-                                            <p className="text-xs text-gray-400">{item.role}</p>
+                                            <p className="font-bold text-sm text-secondary">{item.name}</p>
+                                            <p className="text-xs text-gray-400">{item.treatment}</p>
                                         </div>
                                     </div>
                                 </div>

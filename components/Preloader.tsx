@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { siteConfig } from "@/lib/site-config";
+import { clinicConfig } from "@/lib/clinic-config";
 
 export default function Preloader() {
     const [isLoading, setIsLoading] = useState(true);
@@ -38,7 +38,7 @@ export default function Preloader() {
                             transition={{ duration: 1, ease: "backOut" }}
                             className="mb-8 relative"
                         >
-                            <img src={siteConfig.images.logo} alt="Logo" className="w-32 h-32 md:w-48 md:h-48 object-contain" />
+                            <img src={"/images/logo.png"} alt="Logo" className="w-32 h-32 md:w-48 md:h-48 object-contain" />
                         </motion.div>
 
                         <motion.div
@@ -52,18 +52,18 @@ export default function Preloader() {
                                 animate={{ y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.2, ease: "circOut" }}
                                 className="text-3xl md:text-5xl font-bold mb-2 overflow-hidden block tracking-wide"
-                                style={{ color: siteConfig.theme.colors.primary }}
+                                style={{ color: clinicConfig.theme.primary_color }}
                             >
-                                {siteConfig.name}
+                                {clinicConfig.name}
                             </motion.h1>
                             <motion.p
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.6 }}
                                 className="text-xs md:text-lg font-bold tracking-widest uppercase"
-                                style={{ color: siteConfig.theme.colors.primary }}
+                                style={{ color: clinicConfig.theme.primary_color }}
                             >
-                                {siteConfig.subtitle}
+                                {clinicConfig.tagline}
                             </motion.p>
                         </motion.div>
 

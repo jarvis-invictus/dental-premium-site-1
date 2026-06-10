@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-import { siteConfig } from "@/lib/site-config";
+import { clinicConfig } from "@/lib/clinic-config";
 
 export default function CustomCursor() {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -42,7 +42,7 @@ export default function CustomCursor() {
                 x: mousePosition.x - 16,
                 y: mousePosition.y - 16,
                 scale: isHovering ? 2.5 : 1,
-                backgroundColor: isHovering ? siteConfig.theme.colors.primary : "transparent",
+                backgroundColor: isHovering ? clinicConfig.theme.primary_color : "transparent",
             }}
             transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
         >

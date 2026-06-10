@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { siteConfig } from "@/lib/site-config";
+import { clinicConfig } from "@/lib/clinic-config";
 
 // Official WhatsApp Logo SVG
 function WhatsAppLogo({ className }: { className?: string }) {
@@ -21,7 +21,7 @@ function WhatsAppLogo({ className }: { className?: string }) {
 export default function FloatingWhatsApp() {
     return (
         <Link
-            href={siteConfig.social.whatsapp}
+            href={clinicConfig.social.whatsapp_link}
             target="_blank"
             rel="noopener noreferrer"
             className="fixed bottom-24 right-6 z-50 md:bottom-8 md:right-8"

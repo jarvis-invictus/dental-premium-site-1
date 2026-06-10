@@ -3,11 +3,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
-import { siteConfig } from "@/lib/site-config";
+import { clinicConfig } from "@/lib/clinic-config";
 
 export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
-    const faqs = siteConfig.faqs;
+    const faqs = [{question: 'How often should I visit the dentist?', answer: 'We recommend a check-up and cleaning every 6 months. Early detection of issues saves time, money, and discomfort in the long run.'}, {question: 'Does a root canal treatment hurt?', answer: 'With modern anesthesia, root canal treatment is no more uncomfortable than a standard filling. Most of our patients are surprised by how comfortable the procedure is.'}, {question: 'What are your clinic hours?', answer: 'We are open Monday to Saturday, 9:00 AM to 8:00 PM. Sunday emergency care is available from 10 AM to 2 PM.'}, {question: 'Do you offer teeth whitening?', answer: 'Yes — we offer professional in-clinic whitening with visible results in a single 45-minute session, as well as custom take-home whitening kits.'}, {question: 'How long do dental implants last?', answer: 'With proper care, dental implants can last a lifetime. They are the most durable and natural-feeling solution for missing teeth.'}];
 
     return (
         <section className="py-20 bg-white">

@@ -5,7 +5,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import MobileStickyBar from "@/components/MobileStickyBar";
 import ChatbotWidget from "@/components/ChatbotWidget";
 import SmoothScroll from "@/components/SmoothScroll";
-import { siteConfig } from "@/lib/site-config";
+import { clinicConfig } from "@/lib/clinic-config";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -20,33 +20,33 @@ const interTight = Inter_Tight({
   display: "swap",
 });
 
-const SITE_URL = siteConfig.siteUrl;
+const SITE_URL = `https://${clinicConfig.domain}`;
 
 export const metadata: Metadata = {
-  title: `${siteConfig.name} - ${siteConfig.subtitle}`,
-  description: siteConfig.hero.description,
+  title: `${clinicConfig.name} - ${clinicConfig.tagline}`,
+  description: 'Comprehensive dental care for your entire family. From routine checkups and cleanings to cosmetic procedures and implants — all under one roof.',
   metadataBase: new URL(SITE_URL),
   openGraph: {
-    title: `${siteConfig.name} - ${siteConfig.subtitle}`,
-    description: siteConfig.hero.description,
+    title: `${clinicConfig.name} - ${clinicConfig.tagline}`,
+    description: 'Comprehensive dental care for your entire family. From routine checkups and cleanings to cosmetic procedures and implants — all under one roof.',
     url: SITE_URL,
-    siteName: siteConfig.name,
-    locale: siteConfig.locale.replace("-", "_"),
+    siteName: clinicConfig.name,
+    locale: 'en-IN'.replace("-", "_"),
     type: "website",
     images: [
       {
-        url: siteConfig.images.hero,
+        url: "/images/hero.avif",
         width: 1200,
         height: 630,
-        alt: `${siteConfig.name} - Dental Clinic in ${siteConfig.address.locality}, ${siteConfig.address.city}`,
+        alt: `${clinicConfig.name} - Dental Clinic in ${''}, ${''}`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} - ${siteConfig.subtitle}`,
-    description: siteConfig.hero.description,
-    images: [siteConfig.images.hero],
+    title: `${clinicConfig.name} - ${clinicConfig.tagline}`,
+    description: 'Comprehensive dental care for your entire family. From routine checkups and cleanings to cosmetic procedures and implants — all under one roof.',
+    images: ["/images/hero.avif"],
   },
   alternates: {
     canonical: SITE_URL,
@@ -64,17 +64,17 @@ export default function RootLayout({
       {
         "@type": "Dentist",
         "@id": `${SITE_URL}/#dentist`,
-        name: siteConfig.name,
-        description: siteConfig.hero.description,
-        telephone: siteConfig.phone,
-        email: siteConfig.email,
+        name: clinicConfig.name,
+        description: 'Comprehensive dental care for your entire family. From routine checkups and cleanings to cosmetic procedures and implants — all under one roof.',
+        telephone: clinicConfig.contact.phone_primary,
+        email: clinicConfig.contact.email,
         url: SITE_URL,
-        foundingDate: siteConfig.foundingYear,
+        foundingDate: clinicConfig.established.toString(),
         priceRange: "₹₹",
         openingHours: "Mo-Sa 09:00-20:00",
         currenciesAccepted: "INR",
         paymentAccepted: "Cash, Credit Card, UPI",
-        areaServed: siteConfig.address.areaServed,
+        areaServed: [],
         knowsAbout: [
           "Cosmetic Dentistry",
           "Dental Implants",
@@ -88,31 +88,31 @@ export default function RootLayout({
         ],
         address: {
           "@type": "PostalAddress",
-          streetAddress: `${siteConfig.address.line1} ${siteConfig.address.line2}`,
-          addressLocality: siteConfig.address.city,
-          addressRegion: siteConfig.address.state,
-          postalCode: siteConfig.address.postalCode,
-          addressCountry: siteConfig.address.country,
+          streetAddress: `${clinicConfig.contact.address_full} ${clinicConfig.contact.address_full}`,
+          addressLocality: '',
+          addressRegion: '',
+          postalCode: '',
+          addressCountry: '',
         },
         geo: {
           "@type": "GeoCoordinates",
-          latitude: siteConfig.address.geo.latitude,
-          longitude: siteConfig.address.geo.longitude,
+          latitude: 18.6514,
+          longitude: 73.7431,
         },
-        hasMap: siteConfig.address.googleMapsLink,
+        hasMap: clinicConfig.contact.google_maps_url,
         sameAs: [
-          siteConfig.social.facebook,
-          siteConfig.social.instagram,
-          siteConfig.social.twitter,
+          clinicConfig.social.facebook,
+          clinicConfig.social.instagram,
+          '',
         ].filter(Boolean),
       },
       {
         "@type": "WebSite",
         "@id": `${SITE_URL}/#website`,
         url: SITE_URL,
-        name: siteConfig.name,
-        description: siteConfig.hero.description,
-        inLanguage: siteConfig.locale,
+        name: clinicConfig.name,
+        description: 'Comprehensive dental care for your entire family. From routine checkups and cleanings to cosmetic procedures and implants — all under one roof.',
+        inLanguage: 'en-IN',
       }
     ]
   };
@@ -120,7 +120,7 @@ export default function RootLayout({
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: siteConfig.faqs.map((faq) => ({
+    mainEntity: [{question: 'How often should I visit the dentist?', answer: 'We recommend a check-up and cleaning every 6 months. Early detection of issues saves time, money, and discomfort in the long run.'}, {question: 'Does a root canal treatment hurt?', answer: 'With modern anesthesia, root canal treatment is no more uncomfortable than a standard filling. Most of our patients are surprised by how comfortable the procedure is.'}, {question: 'What are your clinic hours?', answer: 'We are open Monday to Saturday, 9:00 AM to 8:00 PM. Sunday emergency care is available from 10 AM to 2 PM.'}, {question: 'Do you offer teeth whitening?', answer: 'Yes — we offer professional in-clinic whitening with visible results in a single 45-minute session, as well as custom take-home whitening kits.'}, {question: 'How long do dental implants last?', answer: 'With proper care, dental implants can last a lifetime. They are the most durable and natural-feeling solution for missing teeth.'}].map((faq) => ({
       "@type": "Question",
       name: faq.question,
       acceptedAnswer: {
@@ -131,7 +131,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang={siteConfig.locale}>
+    <html lang={'en-IN'}>
       <head>
         <script
           type="application/ld+json"
@@ -146,9 +146,9 @@ export default function RootLayout({
         className={`${inter.variable} ${interTight.variable} antialiased`}
         style={
           {
-            "--primary": siteConfig.theme.colors.primary,
-            "--secondary": siteConfig.theme.colors.secondary,
-            "--accent": siteConfig.theme.colors.accent,
+            "--primary": clinicConfig.theme.primary_color,
+            "--secondary": clinicConfig.theme.primary_color,
+            "--accent": clinicConfig.theme.accent_color,
           } as React.CSSProperties
         }
       >

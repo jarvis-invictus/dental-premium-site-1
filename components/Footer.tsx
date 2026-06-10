@@ -1,5 +1,5 @@
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
-import { siteConfig } from "@/lib/site-config";
+import { clinicConfig } from "@/lib/clinic-config";
 
 export default function Footer() {
     return (
@@ -9,18 +9,18 @@ export default function Footer() {
                     {/* Brand Column */}
                     <div>
                         <div className="flex items-center gap-3 mb-6">
-                            <img src={siteConfig.images.logo} alt="Logo" className="h-12 w-auto bg-white rounded-lg p-1" />
+                            <img src={"/images/logo.png"} alt="Logo" className="h-12 w-auto bg-white rounded-lg p-1" />
                             <div>
                                 <div
                                     className="text-xl font-bold leading-tight font-serif tracking-wide"
-                                    style={{ color: siteConfig.theme.colors.primary }}
+                                    style={{ color: clinicConfig.theme.primary_color }}
                                 >
-                                    {siteConfig.name}
+                                    {clinicConfig.name}
                                 </div>
                                 <div
                                     className="text-xs font-bold tracking-widest uppercase text-gray-400"
                                 >
-                                    {siteConfig.subtitle}
+                                    {clinicConfig.tagline}
                                 </div>
                             </div>
                         </div>
@@ -29,13 +29,13 @@ export default function Footer() {
                             painless root canals. Walk-ins welcome.
                         </p>
                         <div className="flex gap-4">
-                            <a href={siteConfig.social.facebook} aria-label="Facebook" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:opacity-80 cursor-pointer transition-colors text-white" style={{ backgroundColor: undefined }}>
+                            <a href={clinicConfig.social.facebook} aria-label="Facebook" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:opacity-80 cursor-pointer transition-colors text-white" style={{ backgroundColor: undefined }}>
                                 <Facebook className="w-5 h-5" />
                             </a>
-                            <a href={siteConfig.social.instagram} aria-label="Instagram" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:opacity-80 cursor-pointer transition-colors text-white" style={{ backgroundColor: undefined }}>
+                            <a href={clinicConfig.social.instagram} aria-label="Instagram" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:opacity-80 cursor-pointer transition-colors text-white" style={{ backgroundColor: undefined }}>
                                 <Instagram className="w-5 h-5" />
                             </a>
-                            <a href={siteConfig.social.twitter} aria-label="Twitter" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:opacity-80 cursor-pointer transition-colors text-white" style={{ backgroundColor: undefined }}>
+                            <a href={''} aria-label="Twitter" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:opacity-80 cursor-pointer transition-colors text-white" style={{ backgroundColor: undefined }}>
                                 <Twitter className="w-5 h-5" />
                             </a>
                         </div>
@@ -48,7 +48,7 @@ export default function Footer() {
                             <li><a href="#home" className="hover:text-white transition-colors">Home</a></li>
                             <li><a href="#about" className="hover:text-white transition-colors">About</a></li>
                             <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
-                            <li><a href={siteConfig.social.whatsapp} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Contact</a></li>
+                            <li><a href={clinicConfig.social.whatsapp_link} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Contact</a></li>
                         </ul>
                     </div>
 
@@ -59,37 +59,37 @@ export default function Footer() {
                             <li className="flex gap-3">
                                 <MapPin
                                     className="w-5 h-5 shrink-0"
-                                    style={{ color: siteConfig.theme.colors.primary }}
+                                    style={{ color: clinicConfig.theme.primary_color }}
                                 />
                                 <a
-                                    href={siteConfig.address.googleMapsLink}
+                                    href={clinicConfig.contact.google_maps_url}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="hover:text-white transition-colors"
                                 >
-                                    {siteConfig.address.line1}<br />
-                                    {siteConfig.address.line2}<br />
-                                    {siteConfig.address.line3}
+                                    {clinicConfig.contact.address_full}<br />
+                                    {clinicConfig.contact.address_full}<br />
+                                    {clinicConfig.contact.address_full}
                                 </a>
                             </li>
                             <li className="flex gap-3 items-start">
                                 <Phone
                                     className="w-5 h-5 shrink-0 mt-1"
-                                    style={{ color: siteConfig.theme.colors.primary }}
+                                    style={{ color: clinicConfig.theme.primary_color }}
                                 />
                                 <div className="flex flex-col gap-1">
-                                    <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="hover:text-white transition-colors">{siteConfig.phone}</a>
-                                    {siteConfig.phoneSecondary && (
-                                        <a href={`tel:${siteConfig.phoneSecondary.replace(/\s/g, "")}`} className="hover:text-white transition-colors">{siteConfig.phoneSecondary}</a>
+                                    <a href={`tel:${clinicConfig.contact.phone_primary.replace(/\s/g, "")}`} className="hover:text-white transition-colors">{clinicConfig.contact.phone_primary}</a>
+                                    {clinicConfig.contact.phone_primary && (
+                                        <a href={`tel:${clinicConfig.contact.phone_primary.replace(/\s/g, "")}`} className="hover:text-white transition-colors">{clinicConfig.contact.phone_primary}</a>
                                     )}
                                 </div>
                             </li>
                             <li className="flex gap-3 items-center">
                                 <Mail
                                     className="w-5 h-5 shrink-0"
-                                    style={{ color: siteConfig.theme.colors.primary }}
+                                    style={{ color: clinicConfig.theme.primary_color }}
                                 />
-                                <a href={`mailto:${siteConfig.email}`} className="hover:text-white transition-colors">{siteConfig.email}</a>
+                                <a href={`mailto:${clinicConfig.contact.email}`} className="hover:text-white transition-colors">{clinicConfig.contact.email}</a>
                             </li>
                         </ul>
                     </div>
@@ -99,7 +99,7 @@ export default function Footer() {
                         <h4 className="text-lg font-bold text-white mb-6">Location</h4>
                         <div className="rounded-xl overflow-hidden h-[300px] border border-gray-700 shadow-lg relative z-10 group cursor-pointer">
                             <iframe
-                                src={siteConfig.address.mapEmbedUrl}
+                                src={clinicConfig.contact.google_maps_embed}
                                 width="100%"
                                 height="100%"
                                 style={{ border: 0, pointerEvents: "none" }}
@@ -109,7 +109,7 @@ export default function Footer() {
                                 className="grayscale group-hover:grayscale-0 transition-all duration-500 w-full h-full"
                             ></iframe>
                             <a
-                                href={siteConfig.address.googleMapsLink}
+                                href={clinicConfig.contact.google_maps_url}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="absolute inset-0 z-20 flex items-center justify-center bg-transparent"
@@ -121,7 +121,7 @@ export default function Footer() {
                 </div>
 
                 <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm space-y-2">
-                    <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All Rights Reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} {clinicConfig.name}. All Rights Reserved.</p>
                     <p className="text-gray-500 text-sm mt-2">
                         Powered by{" "}
                         <a
