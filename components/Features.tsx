@@ -29,16 +29,16 @@ export default function Features() {
 
                     {/* Right: Content */}
                     <div>
-                        <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">{'Why Patients Choose Us'}</span>
+                        <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">{clinicConfig.whyUs.section_title}</span>
                         <h2 className="text-4xl font-bold text-secondary mb-8">
-                            <SplitText delay={0.2}>{'Modern Equipment,'}</SplitText> <span style={{ color: "#09E0A7" }}><SplitText delay={0.5}>{'Gentle Hands'}</SplitText></span>
+                            <SplitText delay={0.2}>{clinicConfig.whyUs.title_part1}</SplitText> <span style={{ color: "#09E0A7" }}><SplitText delay={0.5}>{clinicConfig.whyUs.title_part2}</SplitText></span>
                         </h2>
                         <p className="text-gray-600 mb-10">
-                            {'Equipped with digital X-rays, intraoral cameras, and laser-assisted tools. Your comfort and safety are our top priority.'}
+                            {clinicConfig.whyUs.description}
                         </p>
 
                         <div className="space-y-8">
-                            {[{icon: 'Users', title: 'Expert Team', desc: 'MDS-qualified dentists with 15+ years of combined experience across 9 specialties.'}, {icon: 'HeartPulse', title: 'Advanced Equipment', desc: 'Digital X-rays, intraoral scanners, and laser-assisted procedures for precise treatment.'}, {icon: 'Pill', title: 'Pain-Free Dentistry', desc: 'Modern anesthetic techniques and sedation options. Most patients say they barely felt a thing.'}].map((feature, idx) => {
+                            {clinicConfig.whyUs.features.map((feature, idx) => {
                                 const IconComponent = iconMap[feature.icon] || Users;
                                 return (
                                     <motion.div

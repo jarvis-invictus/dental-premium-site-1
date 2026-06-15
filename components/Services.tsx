@@ -2,7 +2,7 @@
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Link from "next/link";
-import { services } from "@/lib/services_data";
+import { clinicConfig } from "@/lib/clinic-config";
 import React from "react";
 
 function TiltCard({ children, className }: { children: React.ReactNode; className?: string }) {
@@ -83,7 +83,7 @@ export default function Services() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {services.map((service, index) => (
+                    {clinicConfig.services.map((service, index) => (
                         <motion.div
                             key={service.slug}
                             initial={{ opacity: 0, y: 20 }}

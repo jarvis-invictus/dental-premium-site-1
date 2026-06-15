@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { clinicConfig } from "@/lib/clinic-config";
-import { services } from "@/lib/services_data";
 
 /* ── Time slots: 9am–8pm, 30-min intervals ────────────────────────────────── */
 const TIME_SLOTS = Array.from({ length: 23 }, (_, i) => {
@@ -183,7 +182,7 @@ export default function AppointmentForm() {
                                 <FieldWrapper id="service" label="Service Required">
                                     <select id="service" name="service" value={form.service} onChange={handleChange} className={inputCls()}>
                                         <option value="">Select a service</option>
-                                        {services.map((s) => <option key={s.slug} value={s.title}>{s.title}</option>)}
+                                        {clinicConfig.services.map((s) => <option key={s.slug} value={s.title}>{s.title}</option>)}
                                     </select>
                                 </FieldWrapper>
                             </div>

@@ -61,7 +61,7 @@ export default function About() {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">{'Meet The Dentist'}</span>
+                        <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">{clinicConfig.about.section_title}</span>
                         <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4 font-serif">
                             <SplitText delay={0.2}>{clinicConfig.doctors[0].name}</SplitText> <br />
                             <span className="text-accent text-2xl md:text-3xl font-sans font-normal block mt-2" style={{ color: clinicConfig.theme.accent_color }}>{clinicConfig.doctors[0].qualifications}</span>

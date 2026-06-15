@@ -36,17 +36,17 @@ export default function Header() {
                     <div className="flex space-x-6">
                         <div className="flex items-center gap-2">
                             <MapPin className="w-4 h-4" />
-                            <span>{clinicConfig.contact.address_full} {clinicConfig.contact.address_full}</span>
+                            <span className="truncate max-w-[250px] md:max-w-md">{clinicConfig.contact.address_full}</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <Clock className="w-4 h-4" />
-                            <span>{clinicConfig.hours.map(h => h.from ? `${h.day}: ${h.from}-${h.to}` : '').join(', ')}</span>
+                            <span>Mon-Sat: {clinicConfig.hours[0]?.from || '09:00'} - {clinicConfig.hours[0]?.to || '20:00'}</span>
                         </div>
                     </div>
                     <div className="flex items-center gap-4">
-                        <a href={`tel:${clinicConfig.contact.phone_primary.replace(/\s/g, "")}`} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                        <a href={`tel:${(clinicConfig.contact.phone_primary || '').replace(/\s/g, "")}`} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                             <Phone className="w-4 h-4" />
-                            <span>{clinicConfig.contact.phone_primary}</span>
+                            <span>{clinicConfig.contact.phone_primary || "Contact Us"}</span>
                         </a>
                         <div className="flex items-center gap-3 border-l border-white/20 pl-4">
                             <a href={clinicConfig.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
