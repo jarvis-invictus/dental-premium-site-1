@@ -86,7 +86,7 @@ export default function Hero() {
                             fill="none"
                         >
                             <defs>
-                                <style>{`
+                                <style dangerouslySetInnerHTML={{ __html: `
                                     @keyframes orbitA {
                                         from { stroke-dashoffset: 0; }
                                         to   { stroke-dashoffset: -100; }
@@ -97,7 +97,7 @@ export default function Hero() {
                                     }
                                     .ring-a { animation: orbitA 4s linear infinite; }
                                     .ring-b { animation: orbitB 6s linear infinite; }
-                                `}</style>
+                                `}} />
                             </defs>
 
                             {/* Ring A — green, steep diagonal top-left to bottom-right (-45°) */}

@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
-import { services } from '@/lib/services_data'
+import { clinicConfig } from '@/lib/clinic-config'
+const services = clinicConfig.services;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://dental-standard-v2.vercel.app'

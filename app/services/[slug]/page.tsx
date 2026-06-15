@@ -1,4 +1,4 @@
-import { services } from "@/lib/services_data";
+const services = clinicConfig.services;
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Phone, CheckCircle2 } from "lucide-react";
@@ -20,6 +20,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
 }
 
+import * as Icons from "lucide-react";
+
 export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     const serviceIndex = services.findIndex(s => s.slug === slug);
@@ -31,6 +33,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
     const waText = `Hi, I am interested in ${service.title} at ${clinicConfig.name}. Could you please share more details?`;
     const waPhone = clinicConfig.contact.phone_primary.replace(/\D/g, "");
+
+    const IconComponent = (Icons as any)[service.icon] || Icons.CheckCircle2;
 
     return (
         <main className="min-h-screen bg-white">
@@ -54,7 +58,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="max-w-4xl">
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full text-primary font-semibold text-sm mb-6 shadow-sm">
-                            <service.icon className="w-4 h-4" />
+                            <IconComponent className="w-4 h-4" />
                             Dental Service
                         </div>
                         <h1 className="text-4xl md:text-6xl font-bold text-secondary font-serif mb-6 leading-tight">
