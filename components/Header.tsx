@@ -27,38 +27,6 @@ export default function Header() {
 
     return (
         <header className="w-full z-50 sticky top-0">
-            {/* Top Bar */}
-            <div
-                className="text-white py-2 text-sm hidden md:block"
-                style={{ backgroundColor: clinicConfig.theme.primary_color }}
-            >
-                <div className="container mx-auto px-4 flex justify-between items-center">
-                    <div className="flex space-x-6">
-                        <div className="flex items-center gap-2">
-                            <MapPin className="w-4 h-4" />
-                            <span className="truncate max-w-[250px] md:max-w-md">{clinicConfig.contact.address_full}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <Clock className="w-4 h-4" />
-                            <span>Mon-Sat: {clinicConfig.hours[0]?.from || '09:00'} - {clinicConfig.hours[0]?.to || '20:00'}</span>
-                        </div>
-                    </div>
-                    <div className="flex items-center gap-4">
-                        <a href={`tel:${(clinicConfig.contact.phone_primary || '').replace(/\s/g, "")}`} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                            <Phone className="w-4 h-4" />
-                            <span>{clinicConfig.contact.phone_primary || "Contact Us"}</span>
-                        </a>
-                        <div className="flex items-center gap-3 border-l border-white/20 pl-4">
-                            <a href={clinicConfig.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                                <Instagram className="w-4 h-4 hover:opacity-80 cursor-pointer" />
-                            </a>
-                            <a href={clinicConfig.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                                <Facebook className="w-4 h-4 hover:opacity-80 cursor-pointer" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             {/* Main Navigation — floating pill */}
             <div className={`transition-all duration-300 ${isScrolled ? "py-2" : "py-3"}`}>
@@ -99,6 +67,13 @@ export default function Header() {
                                 ></span>
                             </Link>
                         ))}
+                        <a
+                            href={`tel:${clinicConfig.contact.phone_primary.replace(/\s/g, "")}`}
+                            className="flex items-center gap-2 font-medium text-gray-700 hover:text-primary transition-colors"
+                        >
+                            <Phone className="w-4 h-4" />
+                            <span>{clinicConfig.contact.phone_primary}</span>
+                        </a>
                         <Link
                             href="#appointment"
                             className="text-white px-6 py-2.5 rounded-full font-medium transition-all transform hover:scale-105 shadow-lg"

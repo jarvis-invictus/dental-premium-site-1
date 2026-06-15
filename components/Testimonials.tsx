@@ -80,7 +80,9 @@ export default function Testimonials() {
                                     </p>
                                     <div className="flex items-center gap-3 pt-4 border-t border-gray-50 mt-auto">
                                         <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden flex-shrink-0">
-                                            {/* item.image was removed from standard config, fall back to avatar */}
+                                            {item.image ? (
+                                                <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                                            ) : null}
                                         </div>
                                         <div>
                                             <p className="font-bold text-sm text-secondary">{item.name}</p>
