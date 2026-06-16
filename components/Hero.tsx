@@ -71,6 +71,18 @@ export default function Hero() {
                     <div className="relative w-[380px] lg:w-[460px] aspect-square">
 
                         {/* Orbital rings: two ellipses at different angles, dotted + animated, behind image */}
+                        <style dangerouslySetInnerHTML={{ __html: `
+                            @keyframes orbitA {
+                                from { stroke-dashoffset: 0; }
+                                to   { stroke-dashoffset: -100; }
+                            }
+                            @keyframes orbitB {
+                                from { stroke-dashoffset: 0; }
+                                to   { stroke-dashoffset: 100; }
+                            }
+                            .ring-a { animation: orbitA 4s linear infinite; }
+                            .ring-b { animation: orbitB 6s linear infinite; }
+                        `}} />
                         <svg
                             className="absolute"
                             style={{
@@ -86,18 +98,6 @@ export default function Hero() {
                             fill="none"
                         >
                             <defs>
-                                <style dangerouslySetInnerHTML={{ __html: `
-                                    @keyframes orbitA {
-                                        from { stroke-dashoffset: 0; }
-                                        to   { stroke-dashoffset: -100; }
-                                    }
-                                    @keyframes orbitB {
-                                        from { stroke-dashoffset: 0; }
-                                        to   { stroke-dashoffset: 100; }
-                                    }
-                                    .ring-a { animation: orbitA 4s linear infinite; }
-                                    .ring-b { animation: orbitB 6s linear infinite; }
-                                `}} />
                             </defs>
 
                             {/* Ring A — green, steep diagonal top-left to bottom-right (-45°) */}
