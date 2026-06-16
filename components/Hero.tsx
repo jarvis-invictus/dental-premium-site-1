@@ -49,10 +49,10 @@ export default function Hero() {
                     {/* Trusted by patients — avatar pill widget */}
                     <div className="mt-10 inline-flex items-center gap-3 bg-white border border-gray-100 rounded-full px-4 py-2 shadow-md">
                         <div className="flex items-center">
-                            <img src="https://images.unsplash.com/photo-1621887348744-6b0444f8a058?w=40&h=40&fit=crop&crop=face" className="w-8 h-8 rounded-full ring-2 ring-white object-cover" alt="patient" />
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=40&h=40&fit=crop&crop=face" className="w-8 h-8 rounded-full ring-2 ring-white object-cover -ml-2" alt="patient" />
-                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=40&h=40&fit=crop&crop=face" className="w-8 h-8 rounded-full ring-2 ring-white object-cover -ml-2" alt="patient" />
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=40&h=40&fit=crop&crop=face" className="w-8 h-8 rounded-full ring-2 ring-white object-cover -ml-2" alt="patient" />
+                            <img src="/images/patients/rajesh.jpg" className="w-8 h-8 rounded-full ring-2 ring-white object-cover" alt="patient" />
+                            <img src="/images/patients/priya.jpg" className="w-8 h-8 rounded-full ring-2 ring-white object-cover -ml-2" alt="patient" />
+                            <img src="/images/patients/meena.jpg" className="w-8 h-8 rounded-full ring-2 ring-white object-cover -ml-2" alt="patient" />
+                            <img src="/images/patients/vikram.jpg" className="w-8 h-8 rounded-full ring-2 ring-white object-cover -ml-2" alt="patient" />
                         </div>
                         <p className="text-sm text-gray-500">
                             Trusted by <strong className="text-gray-800 font-semibold">500+</strong> patients

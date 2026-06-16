@@ -147,42 +147,42 @@ export const clinicConfig = {
       treatment: "Dental Implant Patient",
       text: "Got both lower molars replaced with implants. Dr. Sharma explained the full procedure on day one — bone grafting, healing time, everything. No surprises. Six months later, they feel like my own teeth.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face"
+      image: "/images/patients/rajesh.jpg"
     },
     {
       name: "Priya K.",
       treatment: "Teeth Whitening",
       text: "Years of tea and coffee stains gone in one sitting. The clinic was clean, the staff was on time, and the results were visible immediately. My husband noticed before I even told him.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
+      image: "/images/patients/priya.jpg"
     },
     {
       name: "Amit S.",
       treatment: "Root Canal Treatment",
       text: "I had been avoiding this for two years because I was scared. Turned out the actual procedure took 40 minutes and I felt nothing. The worst part was the drive to the clinic.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
+      image: "/images/patients/suresh.jpg"
     },
     {
       name: "Sunita R.",
       treatment: "Braces Treatment",
       text: "My daughter's teeth alignment was a concern since she was 12. We started braces here and the improvement in 10 months has been remarkable. The team is patient with kids and very thorough.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
+      image: "/images/patients/meena.jpg"
     },
     {
       name: "Vikram D.",
       treatment: "Full Mouth Rehabilitation",
       text: "After years of neglect I had multiple issues. The treatment plan was clear, phased, and affordable. Three months in and I can eat without pain for the first time in years. Highly recommend.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+      image: "/images/patients/vikram.jpg"
     },
     {
       name: "Meera P.",
       treatment: "Cosmetic Dentistry",
       text: "Got veneers for my front four teeth. The result looks completely natural — nobody can tell they are veneers. Dr. Sharma spent time matching the shade perfectly. Very happy with the outcome.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face"
+      image: "/images/patients/ananya.jpg"
     }
   ],
 
