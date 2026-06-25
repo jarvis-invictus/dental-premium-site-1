@@ -152,6 +152,19 @@ export default function RootLayout({
           } as React.CSSProperties
         }
       >
+        <div style={{ backgroundColor: '#0f172a', width: '100%', position: 'sticky', top: 0, zIndex: 60 }} className="min-h-[44px] flex flex-col sm:flex-row items-center justify-between px-4 py-2 sm:py-0">
+          <div style={{ color: 'white', fontSize: '12px' }} className="mb-2 sm:mb-0">
+            🦷 Demo site by Invictus AI
+          </div>
+          <a 
+            href="https://wa.me/919699577641?text=Hi,%20I%20just%20saw%20your%20demo%20site%20and%20I%20want%20this%20for%20my%20dental%20clinic." 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{ backgroundColor: '#ccff00', color: '#0f172a', padding: '4px 12px', borderRadius: '9999px', fontSize: '12px', fontWeight: 'bold', textDecoration: 'none' }}
+          >
+            Get This For Your Clinic →
+          </a>
+        </div>
         <SmoothScroll>
           {children}
           <FloatingWhatsApp />
