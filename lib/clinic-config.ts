@@ -4,8 +4,8 @@ export const clinicConfig = {
   established: 2009,
 
   contact: {
-    phone_primary: "+91 98765 43210",
-    phone_whatsapp: "+91 98765 43210",
+    phone_primary: "98765 43210",
+    phone_whatsapp: "98765 43210",
     email: "appointments@smiledental.in",
     address_full: "Ground Floor, Sai Plaza, Baner Road, Near D-Mart, Pune - 411045",
     google_maps_url: "https://maps.google.com/?q=Baner+Road+Pune",
@@ -191,7 +191,7 @@ export const clinicConfig = {
     accepts_insurance: true,
     offers_emi: false,
     emergency_available: true,
-    emergency_phone: "+91 98765 43210"
+    emergency_phone: "98765 43210"
   },
 
   stats: {
@@ -200,7 +200,7 @@ export const clinicConfig = {
     google_rating: "4.9"
   },
 
-  domain: "dental-standard-v2.vercel.app",
+  domain: "p1.invictus-ai.in",
   whatsapp_default_message: "Hi, I would like to book an appointment.",
 
   about: {
